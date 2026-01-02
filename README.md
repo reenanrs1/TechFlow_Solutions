@@ -1,8 +1,8 @@
 # TechFlow Tasks - Gerenciamento Ágil
-[cite_start]Projeto desenvolvido para a startup de logística TechFlow Solutions[cite: 6, 7].
+Projeto desenvolvido para a startup de logística TechFlow Solutions.
 
 ## Escopo Inicial
-[cite_start]Um sistema CRUD (Create, Read, Update, Delete) para gerenciamento de tarefas em tempo real[cite: 14, 48].
+Um sistema CRUD (Create, Read, Update, Delete) para gerenciamento de tarefas em tempo real.
 
 ## Metodologia
-[cite_start]Utilização de Kanban via GitHub Projects.
+Utilização de Kanban via GitHub Projects.
