@@ -20,6 +20,7 @@
             </select>
 
             <button type="submit" class="btn btn-primary">Adicionar</button>
+
         </div>
     </form>
 
@@ -30,7 +31,10 @@
                 <strong>{{ task.content }}</strong>
                 <span class="badge bg-secondary ms-2">{{ task.priority }}</span>
             </div>
-            <a href="{{ url_for('delete', task_id=task.id) }}" class="btn btn-danger btn-sm">Excluir</a>
+            <div class="btn-group">
+                <a href="{{ url_for('edit', task_id=task.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="{{ url_for('delete', task_id=task.id) }}" class="btn btn-danger btn-sm">Excluir</a>
+            </div>
         </li>
         {% endfor %}
     </ul>
