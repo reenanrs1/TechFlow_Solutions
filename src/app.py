@@ -16,4 +16,10 @@ def add():
         tasks.append({'id': len(tasks) + 1, 'content': content})
     return redirect(url_for('index'))
 
+@app.route('/delete/<int:task_id>')
+def delete(task_id):
+    global tasks
+    tasks = [t for t in tasks if t['id'] != task_id]
+    return redirect(url_for('index'))
+
 if __name__ == '__main__': app.run(debug=True)
