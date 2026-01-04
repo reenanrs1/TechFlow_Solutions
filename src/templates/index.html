@@ -9,16 +9,28 @@
 <body class="container mt-5">
     <h1>Gerenciador de Tarefas TechFlow</h1>
     <hr>
-    <ul class="list-group">
-        <form action="/add" method="POST" class="mb-4">
+    <form action="/add" method="POST" class="mb-4">
+        <div class="input-group">
             <input type="text" name="content" class="form-control" placeholder="Nova tarefa..." required>
-            <button type="submit" class="btn btn-primary mt-2">Adicionar</button>
-        </form>
-        
+
+            <select name="priority" class="form-select" style="max-width: 150px;">
+                <option value="Baixa">Baixa</option>
+                <option value="Média" selected>Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </div>
+    </form>
+
+    <ul class="list-group">
         {% for task in tasks %}
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ task.content }}
-        <a href="{{ url_for('delete', task_id=task.id) }}" class="btn btn-danger btn-sm">Excluir</a>
+            <div>
+                <strong>{{ task.content }}</strong>
+                <span class="badge bg-secondary ms-2">{{ task.priority }}</span>
+            </div>
+            <a href="{{ url_for('delete', task_id=task.id) }}" class="btn btn-danger btn-sm">Excluir</a>
         </li>
         {% endfor %}
     </ul>
